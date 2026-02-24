@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=Hind:wght@300;400;500;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 43 43% 97%;
+    --foreground: 150 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 150 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 150 30% 10%;
+
+    --primary: 120 60% 30%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 90 30% 92%;
+    --secondary-foreground: 150 30% 15%;
+
+    --muted: 90 15% 94%;
+    --muted-foreground: 150 10% 45%;
+
+    --accent: 45 80% 52%;
+    --accent-foreground: 30 40% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 120 15% 88%;
+    --input: 120 15% 88%;
+    --ring: 120 60% 30%;
+
+    --radius: 6px;
+
+    --sidebar-background: 120 20% 96%;
+    --sidebar-foreground: 150 30% 15%;
+    --sidebar-primary: 120 60% 30%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 90 30% 92%;
+    --sidebar-accent-foreground: 150 30% 15%;
+    --sidebar-border: 120 15% 88%;
+    --sidebar-ring: 120 60% 30%;
+
+    /* Custom tokens */
+    --trust-green: 120 60% 30%;
+    --trust-green-light: 120 40% 45%;
+    --trust-green-dark: 130 65% 20%;
+    --earth-brown: 30 35% 30%;
+    --warm-sand: 40 40% 94%;
+    --leaf-green: 100 50% 40%;
+    --sky-blue: 200 50% 50%;
+
+    --gradient-primary: linear-gradient(135deg, hsl(130 65% 20%), hsl(100 50% 40%));
+    --gradient-hero: linear-gradient(160deg, hsl(130 65% 20%) 0%, hsl(120 60% 30%) 50%, hsl(100 50% 40%) 100%);
+    --gradient-warm: linear-gradient(135deg, hsl(40 40% 94%), hsl(90 30% 92%));
+
+    --shadow-card: 0 4px 20px -4px hsl(120 60% 30% / 0.1);
+    --shadow-elevated: 0 8px 30px -8px hsl(120 60% 30% / 0.15);
+
+    --font-heading: 'DM Serif Display', serif;
+    --font-body: 'DM Sans', sans-serif;
+    --font-hero-heading: 'Cormorant Garamond', serif;
+    --font-hero-body: 'Hind', 'DM Sans', sans-serif;
+
+    /* Hero-specific palette */
+    --hero-forest: 152 43% 21%;
+    --hero-leaf: 138 28% 42%;
+    --hero-sand: 41 49% 81%;
+    --hero-warm-white: 43 54% 97%;
+    --hero-saffron: 30 63% 48%;
+  }
+
+  .dark {
+    --background: 150 30% 6%;
+    --foreground: 90 20% 95%;
+    --card: 150 25% 10%;
+    --card-foreground: 90 20% 95%;
+    --popover: 150 25% 10%;
+    --popover-foreground: 90 20% 95%;
+    --primary: 120 50% 45%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 150 20% 15%;
+    --secondary-foreground: 90 20% 90%;
+    --muted: 150 15% 15%;
+    --muted-foreground: 90 10% 60%;
+    --accent: 45 70% 50%;
+    --accent-foreground: 30 40% 10%;
+    --border: 150 15% 18%;
+    --input: 150 15% 18%;
+    --ring: 120 50% 45%;
+    --sidebar-background: 150 25% 8%;
+    --sidebar-foreground: 90 20% 90%;
+    --sidebar-primary: 120 50% 45%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 150 20% 15%;
+    --sidebar-accent-foreground: 90 20% 90%;
+    --sidebar-border: 150 15% 18%;
+    --sidebar-ring: 120 50% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-hero-body);
+    font-size: 17px;
+    line-height: 1.8;
+    color: #2E3A32;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-hero-heading);
+    letter-spacing: 0.4px;
+    line-height: 1.25;
+  }
+
+  p {
+    max-width: 720px;
+  }
+
+  blockquote, .quote-block {
+    font-family: var(--font-hero-heading);
+    font-style: italic;
+    font-size: 22px;
+    line-height: 1.6;
+  }
+
+  nav, nav a, nav button {
+    font-family: var(--font-hero-body);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+  }
+}
+
+@layer components {
+  .section-block {
+    padding-top: 60px;
+    padding-bottom: 60px;
+    @apply px-4 md:px-8 lg:px-16;
+  }
+
+  .section-block-major {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    @apply px-4 md:px-8 lg:px-16;
+  }
+
+  .section-divider {
+    height: 1px;
+    background-color: #E6DFCF;
+    margin: 0 auto;
+    max-width: 90%;
+  }
+
+  .section-label {
+    @apply text-xs font-semibold uppercase tracking-widest mb-2;
+    color: #2F6B4F;
+  }
+
+  .section-placeholder {
+    @apply border border-dashed rounded-md p-8 text-center;
+    border-color: #E6DFCF;
+    color: #2F6B4F;
+  }
+
+  .container-page {
+    @apply max-w-7xl mx-auto w-full;
+  }
+
+  .reading-column {
+    max-width: 760px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
